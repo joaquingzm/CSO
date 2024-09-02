@@ -1,0 +1,32 @@
+2 Distribuciones de GNU/Linux
+
+a y b) ¿Qué es una distribución de GNU/Linux? Nombre al menos 4 y sus diferencias
+
+Debian: Distribución centrada en la estabilidad y soporte a largo plazo.
+Normalmente utilizada por servidores y usuarios que valoran la estabilidad.
+Es software libre.
+
+Red Hat: Distribución de pago centrada en el uso empresarial. Normalmente
+sus versiones OS tiene un soporte de 10 años.
+
+Arch: Distribución que trata de ser simple y personalizable. El tipo de
+usuario para el cual está hecho es uno con profundos conociemientos del
+funcionamiento de un sistema operativo el cuál desea poder conocer
+y controlar todo lo que suceda en su computador.
+
+Ubuntu: Distribución derivada de Debian, creada para ser de fácil acceso
+para el usuario sin necesidad de que éste deba de tener conocimientos del
+funcionamiento de un OS.
+
+c) ¿Qué es Debian?
+
+Objetivos del Proyecto:
+El software creado es de distribución libre, esto es: cualquiera puede
+acceder a su código, ejecutarlo, modificarlo, redistribuirlo y 
+comercializarlo. Aunque en principio parece que la comercialización fuera
+en contrad de todo lo que es el software libre, la regulación natural del
+mercado lleva a mejoras de software por costos no muy altos. Normalmente
+si alguien redistribuye o comercializa con código protegido por licencias
+de software libre está también obligado a distribuir libremente el suyo.
+
+

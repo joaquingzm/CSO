@@ -1,0 +1,49 @@
+5. Intérprete de comandos (Shell)
+
+a) ¿Qué es?
+
+Es el encargado de hacer posible la comunicación entre el usuario y el 
+sistema operativo mediante comandos que lanzan determinadas rutinas.
+
+b) ¿Cuáles son sus funciones?
+
+Se encarga de interpretar los comandos del usuario y realiza ejecutables
+propios que se comunican con el kernel del sistema para que éste responda
+vía texto en la terminal.
+
+c) Mencione 3
+
+sh, bash y csh. Sh (Bourne Shell) se encuentra disponible en todas las
+versiones de Unix, bash (Bourne Again Shell) es una reversión de sh y cuenta
+con las mismas característica que se predecesor y funcionalidades nuevas
+como historial de comandos. Por último csh es una shell que permite realizar
+comandos con sintáxis similar al lenguaje de programación C.
+
+d) ¿Dónde se ubican los comandos propios y externos del Shell?
+
+Comandos externos: se pueden obtener todas las direcciones en las cuales
+se buscan comandos externos poniendo "echo $PATH" en la terminal.
+
+Comandos propios: Se encuentra integrados en el binario de la shell. La 
+dirección del archivo binario en el caso de bash es /bin/bash.
+
+e) ¿Por qué considera que el Shell no es parte del Kernel de GNU/Linux?
+
+EL Shell es un interpréte de comandos, facilita el uso del hardware para el
+usuario siendo él mismo quién se comunica con el Kernel. No es parte del
+Kernel porque se encarga de tareas distintas y al momento de querer
+ejecutar un comando se lo comunica al Kernel y es él quién realmente lo
+lleva a cabo.
+
+f) ¿Es posible definir un intérprete de comandos distinto para cada usuario?
+¿Desde dónde se define? ¿Cualquier usuario puede realizar dicha tarea?
+
+Sí, es posible definir un intérprete de comandos distinto para cada usuario.
+Esto se define en el archivo /etc/passwd y puede ser modificado de 2 formas.
+1) Acceciendo al archivo con permisos de administrador y cambiar la ruta 
+del binario del intérprete de comandos por otro.
+2) Utilizando el comando "chsh -s" y seguidamente poner la dirección del 
+binario del intérprete de comandos que se quiera. Éste comando permite
+a un usuario sin permisos de administrador cambiar su shell.
+
+

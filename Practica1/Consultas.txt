@@ -1,0 +1,20 @@
+Ej1.e consular qués es la multitarea. No encontré info en las diapositivas,
+no sé si la cátedra recomienda tratar de averiguar estas cosas por nuestra
+cuenta.
+
+Ej1.f No sé qué es POSIX. Leí que es un formato de algo creado por Richard
+Stallman
+
+Ej3.b Describiendo GNU/Linux quería comentar que Linux es un kernel
+monolítico híbrido, cómo puedo describir esas características?
+En las filminas dice que els er monolítico significa que drivers y código
+del Kernel se ejecutan en modo privilegiado y que híbrido significa
+que es posible agregar y quitar módulos??
+
+Ej4.f No sé bien como describir algo monolítico.
+
+Ej5.e Está bien la respuesta? Creo que podrían contarme alguna definición
+mejor.
+
+
+

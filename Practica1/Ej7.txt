@@ -1,0 +1,52 @@
+7 Particiones:
+
+a) Definición. Tipos de particiones. Ventajas y Desventajas.
+Existen 2 tipos de tablas de particiones, GPT y MBR. MBR es un tipo más
+antiguo y solamente permite tener 4 particiones primarias o 3 primarias y
+una extendida. Por otro lado en GPT dejan de existir las particiones
+primarias ya que permite tener hasta un máximo de 128 sin contar la 
+posibilidad de crear una partición lógica. GPT funciona con sistemas
+que tienen incorporado UEFI (Es un firmware que permite que se trabaje
+con tabla de particiones GPT) aunque también es compatible con sistemas
+más viejos pero no permite usarse a su máxima capacidad.
+
+Partición Swap: Sirve para utilizar el espacio de memoria en conjunto
+con la ram y poder bajar programas a un espacio de memoria con direcciones
+acotadas.
+
+Paritición de Arranque: Lugar donde se guarda los archivos necesarios
+para dar arranque al sistema operativo. En un formato de particiones con
+tabla de partición MBR (Master Boot Record) del byte 512 al 446 del cilindro0,sector 0 del disco está almacenado el MBC (Master Boot Code). 
+
+Partición lógica: Cuando se utiliza el tipo de tabla de particiones MBR es
+posible crear 3 particiones primarias y una extendida. Dentro de esta última
+partición se crea una división lógica con un límite teórico bastante alto
+pero que en la práctica resulta más que suficiente. 
+
+b) ¿Cómo se identifican las particiones en GNU/Linux? Considere discos IDE,
+SCSI y SATA)
+Los discos tipo IDE,SCSI y SATA se identifican con las siglas "sdXZ", 
+seguidamente la letra X diferencia un dispositivo de otro y la letra Z 
+diferencia un partición de ese dispositivo de otra. En configuraciones con
+tabla de partición tipo GPT existen por lo menos 2 particiones. Una que
+es naturalmente para el uso del sistema operativo y otra en la que está
+almacenado el gestor de arranque.
+
+c) ¿Cuántas particiones son necesarias como mínimo para instalar GNU/Linux?
+A mi entender, 2. Una para el MBR o gestor de arranque dependiendo si se
+utiliza la tabla de particiones MBR o GPT. No sabría si un tipo de FS es
+necesario, sé que es posible utilizar ext3, ext4 y FAT32.
+
+d) Ejemplifique diversos casos de particionamiento dependiendo del tipo
+de tarea que se deba realizar en su sistema operativo.
+Lo mismo que escribí en 7.a)
+
+e) ¿Qué tipo de software existe para particionar? 
+Para crear particiones se utilizar software llamado particionador, existen
+2 tipos:
+Destructivos: Permiten crear y eliminar particiones (fdisk)
+No destructivos: Permiten crear, eliminar y modificar particiones, esto 
+último lo hace más complicado de usar y más propenso a corremper espacios
+del disco. (fips, gparted)
+
+

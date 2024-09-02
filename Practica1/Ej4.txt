@@ -1,0 +1,53 @@
+4 Kernel
+
+a) ¿Qué es? Indique una breve reseña histórica
+ 
+Linux comenzó a ser desarrollado por Linus Torvald en 1991 con la idea
+de hacer un sistema operativo tipo Unix capaz de funcionar en 
+microprocesadores. Ese mismo año comenzó a escribir el código del núcleo
+Linux y distribuyó bajo la licencia GPL. Múltiples programadores comenzaron
+a aportar al proyecto y para 1992 Linux se combinó con GNU para crear el
+sistema operativo que hoy conocemos como GNU/Linux.
+
+b) ¿Cuales son sus funciones principales? 
+
+El kernel es estrictamente el sistema operativo. Es el encargado de  
+administrar el uso del CPU y la comunicación de éste con la memoria y demás
+dispositivos externos.
+
+c) ¿Cuál es la versión actual? ¿Cómo se definía el esquema de versionado del
+Kernel en versiones anteriores a la 2.4? ¿Qúe cambio en el versionado se
+impuso a partir de la versión 2.6?
+
+La versión actual es la 6.1.0.1.4 (Julio 2024).
+El esquema de versionado para las versiones anteriores a la 2.4 se definiía
+en 3 números A.B.C y post 2.4 como A.B.C.D:
+
+A denota la versión del Kernel, es el que cambia
+con menor frecuencia y solamente lo hace cuando hay grandes cambios de 
+código o de conceptos en proyecto.
+
+B en versiones anteriores a la 2.4 el número si el número B era par 
+significaba que la versión era estable y si era impar no lo era. Post 2.4
+no hay cambios significativos entre uno y otro. Pero en general se 
+actualizaba para cambios relativamente grandes en el código.
+
+C indica que hubo una revisión menor del kernel.
+
+D nació cuando hubo un grave error que requería arreglo inmediato
+pero fuera de eso no había cambios significativos como para justificar
+actualizar el número C, ahí es cuando nació un 4to número que con el tiempo
+pasó a utilizarse para Bug-Fixes y parches de seguridad.
+
+
+d) Es posible tener más de un Kernel GNU/Linux instalado en la misma máquina?
+
+Sí.
+
+e) ¿Dónde se encuentra ubicado dentro del FileSystem?
+
+Dentro del FyleSystem se encuentra ubicado en la dirección /usr/src/linux.
+
+f) ¿El kernel de GNU/Linux es monolítico?
+
+

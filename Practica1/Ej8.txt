@@ -1,0 +1,9 @@
+8. Arranque (bootsteap) de un Sistema Operativo: 
+
+a) ¿Qué es el BIOS? ¿Qué tareas realiza?
+El BIOS es un firmware el cuál se encarga de dar un arranque básico a los
+componentes del computador y seguidamente accede al almacenamiento y
+ejecuta los archivos de booteo del sistema.
+
+b) ¿Qué es UEFI? ¿Cuál es su función?
+

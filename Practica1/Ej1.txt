@@ -1,0 +1,46 @@
+1 Características de GNU/Linux
+
+a) Mencione y explique características más relevantes de GNU/Linux
+
+GNU/Linux es un sistema operativo tipo Unix el cuál se encuentra codificado
+mayormente en C aunque también contiene código en assembly y Python. GNU es
+la parte del sistema operativo que probee las librerías que permiten
+realizar tareas escenciales. Por otro lado, Linux es el kernel del sistema
+operativo y permite que los procesos se puedan comunicar con el hardware.
+Ambos proyectos (GNU y Linux) siguen una filosofía de software libre 
+la cual permite que cualquier usuario pueda tomar el código fuente y 
+"ejecutarlo, copiarlo, modificarlo y distribuirlo". 
+
+b) Mencione otros sistemas operativos y compárelos con GNU/Linux en cuanto
+a los puntos mencionados en el inciso a).
+
+Está el ejemplo de Windows y macOS los cuales son sistemas operativos 
+creados por Microsoft y Apple respectivamente y no siguen una filosofía de
+software libre a diferencia de GNU/Linux. Esto es: el código fuente del
+OS no está disponible al usuario.
+
+c) ¿Qués es GNU?
+
+GNU es un conjunto de librerías y funciones que resultan escenciales para
+el uso del hardware por parte del usuario.
+
+d) Indique brevemente una breve historia sobre la evolución del proyecto GNU
+
+En 1985 Richard Stallman fundó la FSF (Free Software Fundation) para 
+proveer soportes legales, logísticos y financieros al proyecto GNU. A medida
+que el proyecto ganaba renombre comenzó a recibir contribuciones de empresas
+interesadas en el proyecto. Para 1990 el sistema GNU ya contaba con editor
+de texto (EMACS) pero aún carecía de un kernel. Años antes se utilizaba
+uno llamado TRIX desarrollado por el MIT pero debido a la complejidad y 
+precio de los equipos en los que funcionaba fue dejado de lado. Después de
+eso el proyecto decidió tomar como kernel a Mach, desarrollado por CMU. 
+Finalmente ese kernel fue renombrado a Hurd y por conflictos personales
+entre los desarrolladores el proyecto terminó estancándose. Para 1991 
+Linus Torvald comienza a desarrollar Linux. El proyecto ganó popularidad
+y a través de la red varios programadores del mundo se unieron a Linus para
+desarrollar el kernel. Para 1992 GNU y Linux se combinaron para formar
+un sistema operativo conocido como "GNU/Linux".
+
+e)
+
+f)

@@ -1,0 +1,14 @@
+3 Estructura de GNU/Linux
+
+a) Nombre cuales son los 3 componentes fundamentales de GNU/Linux
+
+Los 3 componentes fundamentales son:
+Kernel
+Interpréte de comandos
+FileSystem
+
+b) Mencione y explique la estructura básica del Sistem Operativo GNU/Linux
+
+GNU aporta librerías y funciones que son ejecutadas con el kernel(Linux) de 
+"supervisor" encargandose este del acceso a la memoria, dispositivos de
+E/S y del uso del CPU por parte de los procesos.

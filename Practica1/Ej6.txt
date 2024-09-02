@@ -1,0 +1,26 @@
+6. Sistema de Archivos
+
+a) ¿Qué es?
+Un sistema de archivos es el formato en el que se almacenan, ordenan y se
+accceden los datos. 
+
+b) minix, ext, ext2, ext3, ext4, xia, msdos, umsdos, vfat, proc, nfs,
+iso9660, hpfs, sysv, smb, ncpfs
+
+c) Sí, es posible.
+
+d) 
+FHS: FileSystem Hierarchy Standard. Es una convención utilizada para
+sistemas operativos UNIX-Like para guardar archivos. Ejemplos de esto son:
+/bin: carpeta donde se guardan los binarios escenciales para que el usuario
+pueda utilizar el computador.
+/sbin: carpeta donde se guardan los binarios que utiliza el sistema 
+operativo para funcionar.
+/boot: aquí se guardan los bootloaders, kernel, etc.
+/dev: aquí se guardan en archivos la información de cada dispositivo 
+conectado al computador.
+/usr: aplicaciones de usuario.
+/etc: archivos de configuración.
+/home: donde se almacenan los archivos de usuario.
+/var: información que varía de tamaño.
+
