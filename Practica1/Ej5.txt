@@ -33,7 +33,10 @@ EL Shell es un interpréte de comandos, facilita el uso del hardware para el
 usuario siendo él mismo quién se comunica con el Kernel. No es parte del
 Kernel porque se encarga de tareas distintas y al momento de querer
 ejecutar un comando se lo comunica al Kernel y es él quién realmente lo
-lleva a cabo.
+lleva a cabo. 
+Profe checked: Distintos lenguajes de shell scripting terminan utilizando
+las mismas librerías del sistema operativo, realmente no es que sus comandos
+sean procesos sino que llaman a librerías del OS.
 
 f) ¿Es posible definir un intérprete de comandos distinto para cada usuario?
 ¿Desde dónde se define? ¿Cualquier usuario puede realizar dicha tarea?
