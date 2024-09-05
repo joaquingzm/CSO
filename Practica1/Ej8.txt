@@ -6,4 +6,13 @@ componentes del computador y seguidamente accede al almacenamiento y
 ejecuta los archivos de booteo del sistema.
 
 b) ¿Qué es UEFI? ¿Cuál es su función?
+UEFI es un firmware superior a BIOS, ocupa más espacio en la memoria en la 
+que está almacenada en la mother y gracias a eso proporciona más funcionalidades.
+Por ejemplo permite al usuario utilizar el mouse, da una GUI mejor a la de BIOS y
+trabaja con keys (algún tipo de hash) para chequear que el archivo no esté corrupto.
+Trajo consigo también un nuevo tipo de formato de tabla de pariticiones llamado 
+GPT. Los dispositivos de almacenamiento comienzan a necesitar contener un firmware
+específico para funcionar con UEFI.
+
+c)
 
