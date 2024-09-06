@@ -1,9 +1,6 @@
-Ej1.e consular qués es la multitarea. No encontré info en las diapositivas,
-no sé si la cátedra recomienda tratar de averiguar estas cosas por nuestra
-cuenta.
-
-Ej1.f No sé qué es POSIX. Leí que es un formato de algo creado por Richard
-Stallman
+Ej1.f No sé qué es POSIX. Leí que es un formato de cómo tienen que ser las
+interfaces del sistema operativo y aplicaciones de usuario??? (no sé bien
+que es una interfaz)
 
 Ej3.b Describiendo GNU/Linux quería comentar que Linux es un kernel
 monolítico híbrido, cómo puedo describir esas características?
@@ -12,6 +9,11 @@ del Kernel se ejecutan en modo privilegiado y que híbrido significa
 que es posible agregar y quitar módulos??
 
 Ej4.f No sé bien como describir algo monolítico.
+
+Ej8.c Qué hace el MBC? Guarda alguna parte del sistema operativo
+o a que se refiere con dar arranque? Porque de eso ya se encarga
+la BIOS no?
+
 
 
 
