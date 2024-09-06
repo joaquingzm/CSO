@@ -41,6 +41,10 @@ y a través de la red varios programadores del mundo se unieron a Linus para
 desarrollar el kernel. Para 1992 GNU y Linux se combinaron para formar
 un sistema operativo conocido como "GNU/Linux".
 
-e)
+e)Explique qué es la multitarea, e indique si GNU/Linux hace uso de ella.
+La multitarea permite que varios procesos hagan uso del CPU y otros recursos
+en base al criterio de sistema operativo. Además no es necesario que los
+procesos hayan finalizado, pueden ser reemplazados por procesos nuevos
+o no finalizados. GNU/Linux es un sistema operativo
 
 f)
