@@ -14,5 +14,39 @@ Trajo consigo también un nuevo tipo de formato de tabla de pariticiones llamado
 GPT. Los dispositivos de almacenamiento comienzan a necesitar contener un firmware
 específico para funcionar con UEFI.
 
-c)
+c)¿Qué es el MBR? ¿Que es el MBC?
+El MBR (Master Boot Record) es un esque de particiones que permite acceder a 
+a las direcciones de memoria de dispositivos de almacenamiento de hasta 2TB.
+Éste esquema de particiones permitía tener hasta 4 particiones primarias o
+3 primarias y una extendida la cuál después podía dividirse en un número de
+particiones lógicas bastante elevado.
+En los primeros 512 bytes del cilindro 0, cabeza 0 y sector 1 en el caso de
+un disco duro se encuentra la tabla de particiones y el MBC.. De esos 512 
+bytes, hasta el byte 446 se encuentra el MBC (Master Boot Code). Éste tiene
+cargado una parte del sistema operativo para que la computadora arranque.
+A partir del byte 446, hay 64 bytes que son la tabla de particiones. Quedan
+2 bytes libres en los que usualmente se deposita una firma.
+
+d)¿A qué hacen referencia las siglas GPT? ¿Qué sustituye? Indique cuál es su formato.
+GPT hace referencia a GUID(Global Unique Identifiers) Partition Table. Es un
+estándar de tablas de particiones de un disco que forma parte del estándar UEFI.
+Éste esquema de particionado reemplazó a MBR y trajo consigo varias mejoras.
+Ésta nueva tabla de particiones permitía tener hasta 128 particiones. Seguía
+conteniendo una tabla de particiones MBR para compatibilidad. También trajo
+consigo mayor seguridad contra daños en el disco, la tabla de particiones
+GPT estaba copiada al inicio del disco y al final en caso de que alguna parte
+del almacenamiento se dañara.
+
+e) ¿Cuál es la funcionalidad de un “Gestor de Arranque”? ¿Qué tipos existen? ¿Dónde se
+instalan? Cite gestores de arranque conocidos
+El gestor de arranque se almacena en el MBC y en los 30kb restantes del "MBR gap".
+Se encarga de cargar una imagen del kernel almacenado en la partición de memoria elegida
+en la RAM.
+
+(f) ¿Cuáles son los pasos que se suceden desde que se prende una computadora hasta que
+el Sistema Operativo es cargado (proceso de bootstrap)?
+La BIOS se encarga de leer el gestor de arranque almacenado en el MBR, en el caso
+del gestor GRUB (GRand Unified Bootloader) pasa por la fase 1 que carga la fase 1.5
+la cual está almacenada en los 30kg del MBR gap y finalmente la fase 2 es cargar
+el kernel.
 
