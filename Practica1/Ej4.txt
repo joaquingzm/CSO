@@ -49,5 +49,8 @@ e) ¿Dónde se encuentra ubicado dentro del FileSystem?
 Dentro del FyleSystem se encuentra ubicado en la dirección /usr/src/linux.
 
 f) ¿El kernel de GNU/Linux es monolítico?
+No, es monolítico híbrido. Esto permite que drivers sean cargados al kernel
+de manera modular y que no haga falta recompilar el kernel para añadir esos
+nuevos drivers.
 
 
