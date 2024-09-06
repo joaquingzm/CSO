@@ -47,4 +47,7 @@ en base al criterio de sistema operativo. Además no es necesario que los
 procesos hayan finalizado, pueden ser reemplazados por procesos nuevos
 o no finalizados. GNU/Linux es un sistema operativo
 
-f)
+f)¿Qués es POSIX?
+POSIX es un estándar de interfaces entre librerías del sistema operativo
+y procesos para que estós mismos procesos ejecutados en otro sistema operativo
+puedan mediante las interfaces llamar a la librería correspondiente.
