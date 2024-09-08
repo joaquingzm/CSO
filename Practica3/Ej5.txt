@@ -1,0 +1,3 @@
+La funcionalidad del comando exit es la de finalizar el script y retornar
+un valor el cuál si es 0 signfica que el comando se ejecutó correctamente
+y cualquier otro valor entre 1 y 255 significa que hubo un error.
