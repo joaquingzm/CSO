@@ -50,3 +50,6 @@ del gestor GRUB (GRand Unified Bootloader) pasa por la fase 1 que carga la fase 
 la cual está almacenada en los 30kg del MBR gap y finalmente la fase 2 es cargar
 el kernel.
 
+i)  ¿Es posible tener en una PC GNU/Linux y otro Sistema Operativo instalado? Justifique.
+Sí, es posible, el gestor de arranque Grub por ejemplo soporta tener más de una sola
+imagen de kernel. Es posible elegir el sistema operativo en el arranque.
