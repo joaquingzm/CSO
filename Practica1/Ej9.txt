@@ -1,0 +1,21 @@
+9. Archivos
+
+a) ¿Cómo se identifican los archivos en GNU/Linux?
+Los archivos se identifican por:
+
+Extensión: Si bien en GNU/Linux no es obligatorio que los archivos tengan una extensión
+para poder ser reconocidos por el sistema operativo, se acostumbra a poner la extensión
+para facilitar a identificación del tipo de archivo.
+
+Contenido: El comando file identifica el tipo de archivo basandose en su contenido, puede
+identifica archivos txt, bash scripting y más.
+
+Por sus permisos y tipo dentro del OS: Los archivos también son identificados por sus permisos
+de lectura, escritura y ejecución y por el tipo de arhivo que son dentro del sistema operativo:
+- : archivo regular
+d : directorio
+l : enlace simbólico
+
+b) Diferencias entre cat y more
+cat: Muestra el contenido del archivo pasado cómo parámetro todo de una sola vez
+more: Permite ir desplazando el contenido
