@@ -1,0 +1,53 @@
+2. Proceso de arranque SystemV
+
+a) Enumere los pasos del proceso de inicio de un sistema GNU/Linux, desde que se prende 
+la PC hasta que se logra obtener el login en el sistema.
+1- Comienza a ejecutarse el código de BIOS.
+2- El BIOS ejecuta el POST (Power-On Self Test) el cuál se encarga de chequear que el
+hardware escencial se encuentre en correcto funcionamiento.
+3- El BIOS lee el gestor de arranque en el MBR.
+4- El BIOS carga el gestor de arranque en el MBC
+5- El bootloader carga el kernel y el initrd
+6- Se cagra el initrd en la ram el cual permite al sistema operativo acceder a controladores
+para comunicarse con dispositivos de hardware escenciales.
+7- El sistema operativo carga el proceso init y descarta initrd
+8- Se lee el /etc/inittab
+9- Se ejecutan los scripts apuntados por el runlevel 1
+10- El final del runlevel 1 le indica que vaya al runlevel por defecto
+11- Se ejecutan los scripts apuntados por el runlevel por defecto
+12- El sistema está listo para usarse
+
+
+b) Proceso INIT. ¿Quién lo ejecuta? ¿Cuál es su objetivo?
+El proceso init es ejecutado por el OS, es el padre de todos los procesos. Su PDI es 1 y es el 
+encargado de montar el sistema de archivos, de hacer disponibles los demás dispositivos y
+de cargar todos los procesos necesarios para garantizar el correcto funcionamiento del OS.
+
+c) RunLevels. ¿Qué son? ¿Cuál es su objetivo?
+El objetivo de los runlevels es el de apagar ciertos procesos y/o iniciar otros según el
+runlevel que sean. Por ejemplo, el runlevel 0 (rc0.d) es un directorio con archivos
+links simbolicos a esos procesos que en su nombre está denotado con una S si inician un
+proceso y con una K si lo terminan.
+
+d) ¿A qué hace referencia cada nivel de ejecución según el estándar? ¿Dónde se define qué
+Runlevel ejecutar al iniciar el sistema operativo? ¿Todas las distribuciones respetan
+estos estándares?
+Según el estándar:
+• 0: halt (parada)
+• 1: single user mode (monousuario)
+• 2: multiuser, without NFS (modo multiusuario sin soperte de
+red)
+• 3: full multiuser mode console (modo multiusuario completo
+por consola)
+• 4: no se utiliza
+• 5: X11 (modo multiusuario completo con login gráfico basado
+en X)
+• 6: reboot
+
+En el archivo de texto inittab se encuentra definido qué runlevel se inicia como predeterminado.
+La configuración de cada runlevel se encuentra de la siguiente forma: 
+id:nivelesEjecución:acción:proceso
+
+No, no todas las distribuciones respetan estos estándares, en el último timepo la mayoría de las 
+distros han pasado a utilizar systemd como sistema de inicialización.
+
