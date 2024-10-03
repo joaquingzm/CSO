@@ -1,0 +1,32 @@
+a) ¿Qué archivos son utilizados en un sistema GNU/Linux para guardar la información
+de los usuarios?
+/etc/passwd: Contiene información básica de los usuarios.
+/etc/shadow: Almacena contraseñas cifradas y datos de expiración.
+/etc/group: Define los grupos del sistema y sus miembros.
+/etc/gshadow: Contiene información adicional sobre la seguridad de los grupos.
+
+b) ¿A qué hacen referencia las siglas UID y GID? ¿Pueden coexistir UIDs iguales en un
+sistema GNU/Linux? Justifique.
+Las siglas UID y GID hacen referencia a User Identifier y Group Identifier respectivamente.
+No, no es posible que coexistan UIDs iguales en un mismo sistema operativo.
+
+c) ¿Qué es el usuario root? ¿Puede existir más de un usuario con este perfil en GNU/Li-
+nux? ¿Cuál es la UID del root?.
+El usuario root es único y tiene el UID 0 y GID 0, pero es posible que más usuarios accedan
+a las mismas funciones que el usuario root si pertencen al grupo sudoers.
+
+d) Agregue un nuevo usuario llamado iso2017 a su instalación de GNU/Linux, especifique
+que su home sea creada en /home/iso_2017, y hágalo miembro del grupo catedra (si
+no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo
+en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique
+que no queden registros de él en los archivos de información de los usuarios y grupos.
+
+e) Investigue la funcionalidad y parámetros de los siguientes comandos:
+useradd ó adduser
+usermod
+userdel
+su
+groupadd
+who
+groupdel
+passwd
