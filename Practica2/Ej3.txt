@@ -1,0 +1,25 @@
+a) ¿Qué es sytemd?
+Es un sistema de arranque que se implementó en distribuciones más recientes
+de GNU/Linux. A diferencia de SysVinit el cuál tiene la caracteristica de 
+ser un proceso de arranque secuencial, systemd pasa a ser un sistema de arranque
+en paralelo el cuál solamente se basa en dependencias. Esto es, todos los procesos
+se ejecutarán en paralelo sin importarle qué otros se estén ejecutando salvo
+que entre 2 procesos haya definida explicítamente una dependencia, en cuyo caso
+alguno de los 2 esperará a que el otro se termine de ejecutar.
+
+b) ¿A qué hace referencia el concepto de Unit en SystemD?
+
+
+c) ¿Para que sirve el comando systemctl en SystemD?
+Systemctl es el principal comando utilizado para comunicarse con systemd, permite
+iniciar, detener, reiniciar y recargar servicios. También es posible habilitar
+o deshabilitar servicios en el arranque, toda la lista de unit, ver el estado
+de servicios y reiniciar y apagar el computador.
+
+d) ¿A qué hace referencia el concepto de target en SystemD?
+va de la mano con units, terminar
+
+e) Ejecute el comando pstree. ¿Qué es lo que se puede observar a partir de la ejecución
+de este comando?
+Permite ver la jerarquía de procesos. Esto es, todos los procesos iniciados con sus
+padres e hijos respectivos. 
