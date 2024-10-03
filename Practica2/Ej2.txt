@@ -43,11 +43,45 @@ por consola)
 • 5: X11 (modo multiusuario completo con login gráfico basado
 en X)
 • 6: reboot
-
-En el archivo de texto inittab se encuentra definido qué runlevel se inicia como predeterminado.
-La configuración de cada runlevel se encuentra de la siguiente forma: 
-id:nivelesEjecución:acción:proceso
-
 No, no todas las distribuciones respetan estos estándares, en el último timepo la mayoría de las 
 distros han pasado a utilizar systemd como sistema de inicialización.
+
+e) Archivo /etc/inittab. ¿Cuál es su finalidad? ¿Qué tipo de información se almacena en
+el? ¿Cuál es la estructura de la información que en él se almacena?
+En el archivo de texto inittab se encuentra definido qué runlevel se inicia como predeterminado.
+Se encuentra también definido qué runlevels ejecutan qué procesos, la configuración de cada 
+runlevel se encuentra de la siguiente forma: 
+id:nivelesEjecución:acción:proceso
+Un ejemplo de un proceso al cuál más de un runlevel ejecuta sería:
+cr:2345:respawn:/usr/sbin/cron
+- 2345: Esto significa que el proceso cron se ejecutará cuando el sistema esté en los runlevels 2,3,4 o 5.
+- respawn: Indica que si el proceso se detiene, el sistema debe reiniciarlo automáticamente en esos niveles.
+- /usr/sbin/cron: Es el proceso que se ejecutará en los runlevels indicados.
+
+f) Suponga que se encuentra en el runlevel <X>. Indique qué comando(s) ejecutaría para
+cambiar al runlevel <Y>. ¿Este cambio es permanente? ¿Por qué?
+Se puede utilizar los comandos init o telinit de la siguiente forma
+sudo init X
+sudo telinit X
+Siendo X el runlevel al cual se desea cambiar. A menudo se recomienda utilizar telinit para realizar
+cambios de runlevel antes que init ya que maneja los procesos en ejecución de manera más segura que init
+al momento de querer realizar un cambio de runlevel.
+
+g) Scripts RC. ¿Cuál es su finalidad? ¿Dónde se almacenan? Cuando un sistema GNU/Li-
+nux arranca o se detiene se ejecutan scripts, indique cómo determina qué script ejecutar
+ante cada acción. ¿Existe un orden para llamarlos? Justifique.
+Los scripts que ejecuta cada runlevel se encuentran todos en el directorio /etc/init.d. Por otro lado
+los directorios rc0.d/ rc1.d/ rc2.d/ rc3.d/ rc4.d/ rc5.d/ rc6.d/ rcS.d/ contienen archivos del
+tipo enlaces simbólicos los cuales apuntan a los scripts de init.d que controlan los servicios. Un
+ejemplo de estos directorios podría ser el rc0.d/ el cual se encarga de apagar el computador, es por
+eso que todos sus enlaces simbólicos inician con una K:
+
+rc0.d/:
+K01alsa-utils  K01openvpn            K01spice-vdagent        K01virtualbox
+K01bluetooth   K01plymouth           K01sssd
+K01gdm3        K01saned              K01unattended-upgrades
+K01kerneloops  K01speech-dispatcher  K01uuidd
+
+TERMINAR, FALTA SABER QUE ONDA EL ORDEN DE EJECUCIÓN
+
 
