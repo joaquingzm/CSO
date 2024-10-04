@@ -20,13 +20,20 @@ que su home sea creada en /home/iso_2017, y hágalo miembro del grupo catedra (s
 no existe, deberá crearlo). Luego, sin iniciar sesión como este usuario cree un archivo
 en su home personal que le pertenezca. Luego de todo esto, borre el usuario y verifique
 que no queden registros de él en los archivos de información de los usuarios y grupos.
+---- HACER ----
 
 e) Investigue la funcionalidad y parámetros de los siguientes comandos:
-useradd ó adduser
-usermod
-userdel
-su
-groupadd
-who
-groupdel
-passwd
+useradd ó adduser -> Crea un usuario, permite especificar varias opciones como el home
+y shell entre otras.
+usermod -> Permite modificar datos del usuario, su nombre, home y agregar al usuario a un
+grupo entre otras
+userdel -> Elimina al usuario que se le pase como parametro del sistema. Si se utiliz con
+el argumento -r tambien borra el directorio home y sus archivos
+su -> Permite cambiar al usuario que le sea pasado como parametro. Si no se le pasa
+ningun parametro cambia al usuario root.
+groupadd -> Permite crear un grupo y especificar cosas como permisos.
+who -> Permite ver a el nombre, terminal y hora de conexion de todos los usuarios activos
+en el sistema.
+groupdel -> Borra un grupo del sistema si ningun miembro se encuentra activo
+passwd -> Permite cambiar la contraseña de cualquier usuario. Si no se especifica cual
+se cambia la contraseña del usuario que este ejecutando el comando
