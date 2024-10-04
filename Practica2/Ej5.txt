@@ -1,0 +1,119 @@
+a) ¿Cómo son definidos los permisos sobre archivos en un sistema GNU/Linux?
+Los permisos que se definen sobre los archivos son 3:
+
+Read(r): Acceder a los contenidos del archivo
+Write(w): Modificar los contenidos del archivo
+Execute(e): Ejecutar archivos
+
+Sobre un archivo tienen permisos 3 tipos de usuarios:
+
+Usuario(Owner): Propietario del archivo
+Grupo(Group): El grupo al que pertenece el archivo o directorio en el que se encuentra
+Otros(Others): Cualquier propietario que no sea ni propietario ni miembro del grupo
+
+Cuando se realiza un ls -l de algún archivo aparecen 10 caracteres de los cuales el 
+primero señala el tipo de archivo:
+- : archivo regular
+d : directorio
+l : link simbólico
+El resto de los 10 carácteres señalan cuales de los 3 permisos tienen el propietario,
+el grupo y otros, en ese orden. Entonces un ejemplo de un directorio se vería:
+
+drwxr-xr--
+
+Donde el propietario tiene todos los permisos, el grupo al que pertenece el directorio 
+solamente tiene permisos de lectura y escritura y otros usuarios solamente tienen permiso
+de lectura sobre el archivo.
+
+b) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con
+los permisos en GNU/Linux:
+chmod
+chown
+chgrp
+
+- Chmod
+El comando permite cambiar los permisos sobre archivos, un ejemplo se uso sería
+chmod 755 archivo
+Donde
+7 da todos los permisos al propietario, (r=1)+(w=2)+(x=4)=7
+5 da permiso de lectura y ejecución al grupo y a otros, (r=1)+(x=4)=5
+
+- Chown
+Permite cambiar el propietario y grupo de un archivo manteniendo los permisos que había antes.
+Ej:
+chown juan archivo -> juan pasa a ser propietario de archivo
+chown juan:staff -> juan pasa a ser propieatario de archivo y staff a ser grupo propietario de
+archivo
+chown -R juan directorio -> juan pasa ser propietario de directorio y todo su contenido
+
+- Chgrp
+Permite cambiar solamente el grupo propietario del archivo o directorio. Los permisos de
+grupo que tenía el archivo se mantienen intactos y simplemente cambia el grupo. Ej:
+chgrp staff archivo -> Cambia el grupo de archivo a staff
+chgrp -R staff directorio/ -> Cambia el grupo del directorio y todo su contenido a staff
+
+
+c) Al utilizar el comando chmod generalmente se utiliza una notación octal asociada para
+definir permisos. ¿Qué significa esto? ¿A qué hace referencia cada valor?
+Explicado en a)
+
+(d) ¿Existe la posibilidad de que algún usuario del sistema pueda acceder a determinado
+archivo para el cual no posee permisos? Nombrelo, y realice las pruebas correspondientes.
+Solamente el usuario root tiene acceso a todos los permisos sobre todos los archivos sobre
+el sistema.
+
+e) Explique los conceptos de “full path name” y “relative path name”. De ejemplos claros
+de cada uno de ellos.
+El concepto de full path name se refiere a un path absoluto. Sí se trabaja con paths
+absolutos es necesario definir la ruta exacta del archivo con el que se quiera trabajar
+desde el directorio raíz. Un ejemplo sería:
+/home/usuario/documentos/archivo.txt
+Por otro lado el path relativo se utiliza cuando se quiera acceder a archivos cercanos
+al directorio de trabajo sin tener que escribir la ruta completa. Un ejemplo con referencia
+al path absoluto sería si estoy trabajando desde el directorio usuario y quiero acceder
+a archivo.txt entonces el path relativo tiene 2 formas de escribirse:
+documentos/archivo.txt
+./documentos/archivo.txt
+
+
+f) ¿Con qué comando puede determinar en qué directorio se encuentra actualmente?
+¿Existe alguna forma de ingresar a su directorio personal sin necesidad de escribir
+todo el path completo? ¿Podría utilizar la misma idea para acceder a otros directorios?
+¿Cómo? Explique con un ejemplo.
+Para poder determinar el directorio donde me encuentro puedo utilizar el comando pwd. Por
+otro lado para saber mi directorio personal puedo utilizar ~, pasandolo como parámetro a
+cd puedo ir a mi directorio personal. Este mismo concepto se puede utilizar para acceder
+al directorio personal de otros usuarios, por ej cd ~Juan
+
+g) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con
+el uso del FileSystem:
+cd -> Cambio de direccion dentro del filesystem
+
+umount -> Desmonta algun dispositivo de archivos del sistema, significando esto que el sistema
+ya no tiene acceso al dispotivo y que es seguro retirarlo. ej: sudo umount /media/usb
+
+mkdir -> Creo un directorio dentro del filesystem dependiendo el lugar del parámetro que pase
+du -> Permite ver el espacio utilizado por archivos o directorios pasando el path absoluto 
+o relativo
+
+rmdir -> Borro el directorio según ruta relativa o absoluta
+
+df -> Muestra el espacio libre en el dispositivo que se le pase como parámetro
+
+mount -> Sirve para hacer accesible desde el sistema de archivos un dispositivo que se encuentre
+conectado al computador, ej:
+sudo mount /dev/sdb1 /media/usb
+
+ln -> Permite hacer enlances a archivos, pueden ser enlaces duros, los que generan una
+copia virtual del archivo o enlaces simbólicos, que son como un acceso directo.
+
+ln -s /home/usuario/original.txt /home/usuario/enlace.txt (simbólico)
+ln /home/usuario/original.txt /home/usuario/enlace.txt (duro)
+
+ls -> Muestra todos los archivos según ruta relativa o absoluta
+
+pwd -> Muestra dirección absoluta de donde estoy dentro del filesystem
+
+cp -> Se utiliza para copiar archivos desde un path a otro pudiendo ser relativo o absoluto 
+
+mv -> Mueve según rutas relativas y/o absolutas archivos de un lugar a otro renombrandolos
