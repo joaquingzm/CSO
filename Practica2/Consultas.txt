@@ -1,0 +1,71 @@
+Ej2 g) Buscando en mi computadora como se veían mis runlevels y leyendo en internet supuestamente
+debería haber algún orden de ejecución del estilo S01,S02, y así. Por qué lo mío no lo tiene?
+(Mi computadora realmente usa systemd pero por compatibilidad el archivo init.d sigue existiendo)
+
+-- Terminal --
+ls rc0.d/ rc1.d/ rc2.d/ rc3.d/ rc4.d/ rc5.d/ rc6.d/ rcS.d/ 
+
+rc0.d/:
+K01alsa-utils  K01openvpn            K01spice-vdagent        K01virtualbox
+K01bluetooth   K01plymouth           K01sssd
+K01gdm3        K01saned              K01unattended-upgrades
+K01kerneloops  K01speech-dispatcher  K01uuidd
+
+rc1.d/:
+K01alsa-utils  K01gdm3        K01saned              K01sssd   K01virtualbox
+K01bluetooth   K01kerneloops  K01speech-dispatcher  K01ufw    K01whoopsie
+K01cups        K01openvpn     K01spice-vdagent      K01uuidd
+
+rc2.d/:
+K01speech-dispatcher  S01cups         S01plymouth       S01unattended-upgrades
+S01anacron            S01dbus         S01rsync          S01uuidd
+S01apport             S01gdm3         S01saned          S01virtualbox
+S01bluetooth          S01grub-common  S01spice-vdagent  S01whoopsie
+S01console-setup.sh   S01kerneloops   S01sssd
+S01cron               S01openvpn      S01sysstat
+
+rc3.d/:
+K01speech-dispatcher  S01cups         S01plymouth       S01unattended-upgrades
+S01anacron            S01dbus         S01rsync          S01uuidd
+S01apport             S01gdm3         S01saned          S01virtualbox
+S01bluetooth          S01grub-common  S01spice-vdagent  S01whoopsie
+S01console-setup.sh   S01kerneloops   S01sssd
+S01cron               S01openvpn      S01sysstat
+
+rc4.d/:
+K01speech-dispatcher  S01cups         S01plymouth       S01unattended-upgrades
+S01anacron            S01dbus         S01rsync          S01uuidd
+S01apport             S01gdm3         S01saned          S01virtualbox
+S01bluetooth          S01grub-common  S01spice-vdagent  S01whoopsie
+S01console-setup.sh   S01kerneloops   S01sssd
+S01cron               S01openvpn      S01sysstat
+
+rc5.d/:
+K01speech-dispatcher  S01cups         S01plymouth       S01unattended-upgrades
+S01anacron            S01dbus         S01rsync          S01uuidd
+S01apport             S01gdm3         S01saned          S01virtualbox
+S01bluetooth          S01grub-common  S01spice-vdagent  S01whoopsie
+S01console-setup.sh   S01kerneloops   S01sssd
+S01cron               S01openvpn      S01sysstat
+
+rc6.d/:
+K01alsa-utils  K01openvpn            K01spice-vdagent        K01virtualbox
+K01bluetooth   K01plymouth           K01sssd
+K01gdm3        K01saned              K01unattended-upgrades
+K01kerneloops  K01speech-dispatcher  K01uuidd
+
+rcS.d/:
+S01alsa-utils  S01keyboard-setup.sh  S01plymouth-log  S01ufw
+S01apparmor    S01kmod               S01procps        S01x11-common
+
+-- Fin de terminal --
+
+Otra duda, en el archivo inittab leí que "se encuentran definidos los runlevels", a qué
+se refiere con eso? Entiendo que realmente se encuentran definidos qué procesos pertenecen
+a qué runlevels pero creo que los runlevels en sí estaban definidos en los directorios rcX.d???
+
+
+
+Ej3 b) No termino de entender bien a qué se refiere el pdf con unit siendo
+unidades de trabajo. Tampoco entiendo que es eso de activación por socket.
+
