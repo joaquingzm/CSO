@@ -1,0 +1,71 @@
+a) ¿A qué hace referencia el concepto de empaquetar archivos en GNU/Linux?
+Se refiera a combinar un grupo de archivos en uno solo, un "archivo de archivos". Éste tipo
+de archivos se crean comunmente en GNU/Linux con el formato ".tar".
+
+b) Seleccione 4 archivos dentro de algún directorio al que tenga permiso y sume el tamaño
+de cada uno de estos archivos. Cree un archivo empaquetado conteniendo estos 4 archivos y
+compare los tamaños de los mismos. ¿Qué característica nota?
+El empaquetado ocupa más que la suma del tamaño de cada archivo, esto es debido a metadata e
+información sobre la estructura de archivos.
+
+c) ¿Qué acciones debe llevar a cabo para comprimir 4 archivos en uno solo? Indique la
+secuencia de comandos ejecutados.
+tar -czf archivo.tar.gz archivo1 archivo2 archivo3 archivo4
+
+d) ¿Pueden comprimirse un conjunto de archivos utilizando un único comando?
+Sí, lo de arriba
+
+e) Investigue la funcionalidad de los siguientes comandos:
+
+- tar
+Modo de uso: tar [opciones] [archivo.tar] [archivos/directorio/entrada]
+Permite empaquetar archivos y directorios con sus subdirectorios y archivos, manteniendo la
+estructura jerarquíca de los mismos, esto es, juntar muchos archivos en uno. Ocupa
+más espacio que la suma de los archivos por separado ya que guarda metadata y estructura
+de los archivos.
+Parámetros:
+-cf empaqueta los archivos que se la hayan pasado y los mete en un archivo
+-xf desempaquete los archivos guardados en el archivo paquete .tar y los deposita en el
+directorio desde el que fue llamado
+-v muestra información de qué archivos está empaquetando
+-z comprime los archivos con formato gzip
+-j comprime los archivos con formato bzip2
+
+- grep
+Modo de uso: grep [opciones] patrón [archivo/entrada por pipeline]
+Permite buscar patrones dentro de archivos o entradas por pipeline.
+Parámetros:
+-i ignora mayúsculas y minúsculas para la búsqueda
+-v invierte la búsqueda, muestra todo lo que no coincida con el patrón
+-c cuenta cuántas líneas conciden con el patrón
+-n muestra las líneas dónde se encontró el patrón y el número de línea
+-l Si se busca entre muchos archivos (archivo=*.txt por ej) muestra el nombre
+de todos los archivos que contienen el patrón
+-r busca recursivament dentro de un directorio
+-o muestra sólo las cadenas de texto que coinciden con el patrón
+-A/B/C n muestra n líneas alrededor de la línea donde se encontró el patrón.
+A muestra después, B muestra antes y C muestra antes y después de la coincidencia.
+Patrones con expresiones regulares:
+grep "\ba\w*a\b" [archivo] buscan dentro del archivo palabras que comiencen con
+c, tenga una cantidad de letras cualquiera en el medio y termine con a.
+\bX -> comienza la palabra con el patrón X, en éste caso c
+\w* -> con una cantidad de letras cualquiera en medio, se quisiera un número fijo de
+carácteres entre medio sería \w\{n\} siendo n el número deseado
+a\b -> termina con a
+
+- gzip
+Modo de uso: gzip [archivo]
+Aplica el algoritmo DEFLATE para comprimir el archivo que se le pase y lo pone en
+archivo.gz. Para descomprimir se utiliza gzip -d [archivo.gz]
+
+-zgrep
+Mismo funcionamiento que grep pero permite trabajar con archivos comprimidos en formato
+gzip sin necesidad de comprimirlos
+
+- wc
+Modo de uso: wc [opciones] [archivo/entrada por pipeline]
+Contabiliza líneas, palabras y carácteres.
+Parámetros: 
+-l cuenta el número de líneas
+-w cuenta el número de palabras
+-c cuenta el número de bytes
