@@ -1,0 +1,96 @@
+a) ¿Qué es un proceso? ¿A que hacen referencia las siglas PID y PPID? ¿Todos los
+procesos tienen estos atributos en GNU/Linux? Justifique. Indique qué otros atributos
+tiene un proceso.
+Las siglas PID y PPID hacen referencia a "Process ID" y "Parent Process ID" respectivamente.
+En GNU/Linux todos los procesos cuentan con estos atributos ya que son escenciales para
+el correcto funcionamiento del sistema. Todo proceso tiene un padre quién lo engendró y el
+padre de todos los procesos es el proceso init o systemd, dependiendo del gestor de 
+arranque que se tenga, quién posee PID 1 y PPID 0 o 1 dependiendo la distro. 
+Los procesos se abstraen a una PCB (Process Control Block) en donde los datos que
+representan a un proceso son:
+– PID, PPID, UID (User ID), GID (Group ID) y EUID (Effective User ID)
+– Valores de los registros de la CPU (PC, AC, etc)
+– Planificación (estado, prioridad, tiempo consumido, etc)
+– Ubicación (representación) en memoria
+– Accounting (datos de uso de la CPU por parte del proceso)
+– Entrada salida (estado, pendientes, etc)
+
+b) Indique qué comandos se podrían utilizar para ver qué procesos están en ejecución en
+un sistema GNU/Linux.
+- ps -aux muestra todos los procesos ejecutandose en el sistema. ps solo muestra los procesos
+ejecutandose que por parte del usuario.
+- top muestra una tabla dinámica de los procesos que se están ejecutando en el sistema con
+información más detallada como el uso de memoria y CPU de cada proceso (así como ps -aux).
+
+
+c) ¿Qué significa que un proceso se está ejecutando en Background? ¿Y en Foreground?
+
+
+d) ¿Cómo puedo hacer para ejecutar un proceso en Background? ¿Como puedo hacer para
+pasar un proceso de background a foreground y viceversa?
+
+PROCESO EN FOREGROUND
+-Control del terminal: El proceso tiene control directo del terminal. Mientras se 
+ejecuta, el terminal queda ocupado y no se puede ejecutar otro comando hasta que el
+proceso termine.
+-Interacción directa: Se puede interactuar con el proceso de forma inmediata. Por ejemplo,
+si es un proceso que solicita entrada del usuario, puedes escribir directamente en el 
+terminal para responder.
+-Bloqueo de la terminal: Mientras el proceso esté en ejecución, no podrás ejecutar otros 
+comandos en esa terminal hasta que el proceso finalice o sea suspendido.
+
+PROCESO EN BACKGROUND
+-No se bloquea la terminal: El proceso sigue ejecutándose, pero no ocupa el terminal, por
+lo que puedes seguir utilizando la terminal para otras tareas o ejecutar otros comandos.
+-Sin interacción directa: No puedes interactuar directamente con el proceso desde la terminal
+una vez que está en background. Si el proceso requiere alguna entrada, no podrá recibirla hasta
+que lo traigas de nuevo al foreground.
+-Liberación de la terminal: Puedes lanzar varios procesos en segundo plano y seguir ejecutando
+otros comandos mientras esos procesos se ejecutan.
+
+Envío a foreground: Ejecutando el comando jobs es posible ver una lista de los procesos ejecutandose
+en segundo plano llamdados jobs, con el númmero de trabajo y utilizando el comando "fg %x" siendo x
+el número del trabajo que se desea traer a foreground
+Envío a background: Se ha de presionar ctrl+z para suspender el proceso que se esté ejectuando
+actualmente en foreground. Esto lo pone en estado de suspendido y ejecutando el comando "jobs" es
+posible ver además de los procesos en background los procesos que se encuentran suspendidos. Tomando
+el número x de trabajo que se le haya asignado al proceso suspendido, ejecutar "bg %x" hará que el
+proceso comience a funcionar en background.
+
+e) Pipe ( | ). ¿Cuál es su finalidad? Cite ejemplos de su utilización.
+Su finalidad es la de conectar salidas de comandos con entradas de otros.
+
+f) Redirección. ¿Qué tipo de redirecciones existen? ¿Cuál es su finalidad? Cite ejemplos
+de utilización.
+Redirecciones de salida
+- " > " Permite redireccionar la salida de un comando a un archivo, sobreescribiendolo si existe y 
+creandolo en caso contrario. Ej: echo "Hola, Mundo" > archivo.txt
+- " >> " Permite redireccionar también la salida de un comando a un archivo pero este no es destructivo,
+sino que añade la salida al final del archivo, si éste no existe lo crea. Ej:echo "Hola, Mundo" >> archivo.txt
+
+Redireccion de entrada
+- " < " Toma el contenido de un archivo como entrada para un comando. Ej: sort < archivo.txt
+
+Redireccion de Error
+- "2>" Redirige la salida de errores de un comando hacia un archivo, funciona igual que ">".
+Ej: ls /ruta/no/existente 2> errores.txt
+- "2>>" Redirige la salida de errores de un comando al final de un archivo, funciona igual que ">>".
+Ej: ls /ruta/no/existente 2>> errores.txt
+
+Redireccion se salid y erro combinada
+- "&>" Mismo comportamiento que ">"
+- "&>>" Mismo comportamiento que ">>"
+g) Comando kill. ¿Cuál es su funcionalidad? Cite ejemplos.
+
+h) Investigue la funcionalidad y parámetros de los siguientes comandos relacionados con
+el manejo de procesos en GNU/Linux. Además, compárelos entre ellos:
+ps -> Muestra información de los procesos en ejecución
+kill -> Utilizando "kill PID" envía una señal al proceso para que termine. Si se desea forzar el
+cierre se utiliza "kill -9 PID"
+pstree -> Muestra en forma de árbol todos los procesos en relación con sus padrese hijos, agregando
+el argumento "-p" se muestra cada proceso junto con su PID
+killall -> Envía una señal a todos los procesos que concidan con el nombre que se le pase como
+parámetro para que terminen
+top -> Muestra en tiempo real los procesos que se están ejecutando
+nice -> nice -n <valor> <script>, cambia la prioridad de un proceso, yendo los valores de n desde
+-20 (Más alto) a 19 (Más bajo)
