@@ -1,0 +1,61 @@
+Contexto: Me encuentro en $HOME y no soy root ni pertenezco al grupo root, ejecuto o intento 
+ejecutar los siguientes comandos:
+ls −l > prueba
+ps > PRUEBA
+chmod 710 prueba
+chown root:root PRUEBA
+chmod 777 PRUEBA
+chmod 700 /etc/passwd
+passwd root
+rm PRUEBA
+man /etc/shadow
+find / −name *.conf
+usermod root −d /home/newroot −L
+cd /root
+rm ∗
+cd /etc
+cp ∗ /home −R
+shutdown
+
+ls −l > prueba
+  La salida del comando, en este caso los directorios que se encuentran en $HOME como
+  descargas, documentos, etc. es redirigida a un archivo llamado prueba que se crea en $HOME.
+ps > PRUEBA
+  El comando ps da como salida los procesos que se están ejecutando en la terminal y ésta
+  misma salida es redirigida a un archivo llamado PRUEBA, que por no existir, se crea.
+chmod 710 prueba
+  Como este comando se ejecuta sobre un archivo del cual soy propietario, es posible realizar
+  éste comando.
+chown root:root PRUEBA
+  No será posible ejecutar este comando ya que solo usuarios pertenencientes a root o sudo 
+  pueden ejecutarlo.
+chmod 777 PRUEBA
+  Da todos los permisos posibles a todos los usuarios.
+chmod 700 /etc/passwd
+  No es posible ejecutar éste comando ya que el usuario y grupo dueño es root.
+passwd root
+  No es posible cambiar la contraseña del usuario root ya que se debe tener permisos de superusuario.
+rm PRUEBA
+  Borró el archivo del que soy propietario
+man /etc/shadow
+  Muestra un manual del archivo shadow y su propósito y formato.
+find / −name ∗.conf
+  El comando find accederá a todos los directorios a los que el usuario tenga acceso y buscará
+  todos los archivos de terminación .conf. listándolos e informando a qué directorios no pudo acceder
+  para realizar la búsqueda.
+usermod root −d /home/newroot −L
+  Por no tener acceso a permisos de superusuario, no sería posible ejecutar el comando.  
+cd /root
+  Solamente el usuario root tiene acceso a su directorio personal, por lo tanto no es posible ejecutar
+  el comando.
+rm ∗
+  Eliminará todos los archivos del directorio actual, en éste caso me encuentro en el directorio personal
+  del usuario, normalmente al ser la mayoría directorios, no se va a eliminar nada.
+cd /etc
+  Me muevo al directorio /etc
+cp ∗ /home −R
+  La sintáxis es erronéa, en caso de ser cp -R * /home aún así habría problemas seguramente con el acceso
+  a los directorios ya que home contiene los directorios de cada usuario del sistema y no sería tan fácil
+  pegar cosas dento de él.
+shutdown
+  No funcionaría ya que necesitaría permisos de superusuario.
