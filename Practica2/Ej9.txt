@@ -1,0 +1,30 @@
+a) Terminar el proceso con PID 23.
+kill 23 manda señal para que el proceso terminé, funciona por PID
+kill -9 23 el parámetro -9 fuerza a que el proceso termine 
+pkill [nombre del proceso] mismo que killl
+pkill -9 [nombre del proceso] mismo que kill -9
+
+b) Terminar el proceso llamado init o systemd. ¿Qué resultados obtuvo?
+Ninguno, no es posible terminar con el proceso init/systemd en sistemas actuales.
+
+c) Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf”
+
+d) Guardar una lista de procesos en ejecución el archivo /home/<su nombre de usuario>/procesos
+
+e) Cambiar los permisos del archivo /home/<su nombre de usuario>/xxxx a:
+Usuario: Lectura, escritura, ejecución
+Grupo: Lectura, ejecución
+Otros: ejecución
+
+f) Cambiar los permisos del archivo /home/<su nombre de usuario>/yyyy a:
+Usuario: Lectura, escritura.
+Grupo: Lectura, ejecución
+Otros: Ninguno
+
+g) Borrar todos los archivos del directorio /tmp
+
+h) Cambiar el propietario del archivo /opt/isodata al usuario iso2010
+
+i) Guardar en el archivo /home/<su nombre de usuario>/donde el directorio donde
+me encuentro en este momento, en caso de que el archivo exista no se debe eliminar
+su contenido anterior.
