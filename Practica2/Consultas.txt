@@ -115,3 +115,13 @@ tmpfs 1.7G 0 1.7G 0% /dev/shm
 tmpfs 5.0M 8.0K 5.0M 1% /run/lock
 tmpfs 328M 88K 328M 1% /run/user/100b
 Me dió que solamente se usan 5.2GB, cómo puede ser tanta la diferencia?
+
+Ej9c) Ejecutando dos comandos distintos en el mismo directorio para tratar de encontrar todos
+los archivos que concidieran con tener .conf en su nombre usé dos comandos:
+$ find /etc -name "*.conf" | wc -l
+286
+$ ls -l -R /etc | grep "\.conf" | wc -l 
+307
+Por qué da distinto? Ejecutandolo con sudo dió los mismos números.
+
+Ej10l) No puedo mandar mensaje, hay algún problema con el GID entre los usuarios.
