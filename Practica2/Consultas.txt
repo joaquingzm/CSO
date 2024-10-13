@@ -69,3 +69,49 @@ a qué runlevels pero creo que los runlevels en sí estaban definidos en los dir
 Ej3 b) No termino de entender bien a qué se refiere el pdf con unit siendo
 unidades de trabajo. Tampoco entiendo que es eso de activación por socket.
 
+Ej6 a) Cuando pregunta qué otros atributos tiene un proceso, entiendo que la repuesta
+que se busca es la que se da en el pdf que dice: 
+
+Atributos de un proceso
+- Identificación del proceso, y del proceso padre
+- Identificación del usuario que lo "disparó”
+- Si hay estructura de grupos, grupo que lo disparó
+- En ambientes multiusuario, desde que terminal y quien lo ejecuto.
+
+Según internet serían UID (User ID), GID (Group ID) y EUID (Effective User ID). Cómo se corresponde
+más que nada el último con estos atributos de procesos? 
+
+Ej7) Investigando el comando tar me surgió una duda y es sobre el tamaño que ocupa un archivo .tar
+Realicé una prueba ejecutando los siguientes comandos:
+$ echo "hola" > hola.txt
+$ echo "hola" > hola2.txt
+$ tar -cf prueba.tar *
+$ ls -l
+hola.txt ocupa 5bytes
+hola2.txt ocupa 5bytes
+prueba.tar ocupa 10240bytes
+Chequeando con
+$ file hola.txt
+Me da que es ASCII text por lo que cada char vale 1byte
+Para chequear que prueba.tar tuviera 10240 bytes, utilicé 
+$ cat prueba.tar | wc -m
+Y dió 10240, pero es obvio que al realizar cat prueba.tar no tiene 10240 chars, por qué entonces ocupa
+ese espacio el archivo? Los tamaños de bloque del sistema los chequeé con
+$ stat -f .
+Y son de 4096bytes, entonces no tendría por qué ocupar tanto el archivo prueba.tar, por qué lo hace?
+
+duda random: Me propuse tratar de contar mediante comandos el tamaño que ocupa todo el filesystem,
+entonces ejecuté el comando:
+por que yo utilicé el siguiente comando
+$  sudo ls -l -R / | grep -w "total" | awk '{sum += $2} END {print (sum)'
+Entiendo que eso me da la cantidad de bloques que ocupa todo el filesystem, de resultado me dió 5.571.898, utilizando
+stat -f . me dió que el tamaño de bloques es 4096 que entiendo que es en bytes, al hacer las cuentas y multiplicar 5.571.898 por 4096 lo dividí por el tamaño que en bytes que vale un GygaByte que entiendo que es 1024^2Bytes y me dío alrededor de 22.8GB, eso sería entonces que todo el filesystem ocupa 22GB? Por otro lado  fijandome el espacio utilizado:
+$ df -h
+Filesystems Size Used Avail Use% Mounted on
+udev 1.6G 0 1.6G 0% /dev
+tmpfs 328M 1.2M 327M 1% /run
+/dev/sda1 19G 5.2G 13G 30% /
+tmpfs 1.7G 0 1.7G 0% /dev/shm
+tmpfs 5.0M 8.0K 5.0M 1% /run/lock
+tmpfs 328M 88K 328M 1% /run/user/100b
+Me dió que solamente se usan 5.2GB, cómo puede ser tanta la diferencia?
