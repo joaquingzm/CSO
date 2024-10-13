@@ -1,0 +1,35 @@
+a) Cree un directorio cuyo nombre sea su número de legajo e ingrese a él.
+$ mkdir /home/joaco/Universidad/PruebasCSO/03571
+
+b) Cree un archivo utilizando el editor de textos vi, e introduzca su información personal:
+Nombre, Apellido, Número de alumno y dirección de correo electrónico. El archivo
+debe llamarse "LEAME".
+$ vi /home/joaco/Universidad/PruebasCSO/03571/LEAME
+
+c) Cambie los permisos del archivo LEAME, de manera que se puedan ver reflejados los
+siguientes permisos:
+Dueño: ningún permiso
+Grupo: permiso de ejecución
+Otros: todos los permisos
+$ chmod 017 LEAME
+
+d) Vaya al directorio /etc y verifique su contenido. Cree un archivo dentro de su directorio
+personal cuyo nombre sea leame donde el contenido del mismo sea el listado de todos
+los archivos y directorios contenidos en /etc. ¿Cuál es la razón por la cuál puede crear
+este archivo si ya existe un archivo llamado "LEAME" en este directorio?.
+$ ls /etc >> /home/joaco/Universidad/PruebasCSO/03571/leame
+Es posible crearlo porque linux diferencia mayúsculas de minúsculas.
+
+e) ¿Qué comando utilizaría y de qué manera si tuviera que localizar un archivo dentro
+del filesystem? ¿Y si tuviera que localizar varios archivos con características similares?
+Explique el concepto teórico y ejemplifique.
+Usuaría el comando siguiente para encontrar un archivo en específico:
+$ find / -name archivo 2>/dev/null
+Para encontrar archivos con características similares:
+Podría usar el parámetro "-type" para decir si estoy buscando directorios, archivos regulares o
+enlaces simbólicos, además puedo filtrar por extensión poniendo '-name "*.ext"'. 
+
+f) Utilizando los conceptos aprendidos en el punto e), busque todos los archivos cuya
+extensión sea .so y almacene el resultado de esta búsqueda en un archivo dentro del
+directorio creado en a). El archivo deberá llamarse .ejercicio_f".
+$ find / -type f -name "*.so" 2>/dev/null >> /home/joaco/Universidad/PruebasCSO/03571/.ejercicio_f
