@@ -1,0 +1,50 @@
+a) Ingrese al sistema como usuario “root”
+$ su
+
+b) Cree un usuario. Elija como nombre, por convención, la primer letra de su nombre
+seguida de su apellido. Asígnele una contraseña de acceso.
+# useradd -m jg
+# passwd jg
+
+c) ¿Qué archivos fueron modificados luego de crear el usuario y qué directorios se crearon?
+Se creó un directorio personal para el nuevo usuario en /home, el archivo /etc/passwd fue
+modificado agregando al nuevo usuario así como /etc/shadow, después se agregó una nueva línea
+del grupo del nuevo usuario en etc/group y etc/gshadow.
+
+d) Crear un directorio en /tmp llamado cursada2017
+# mkdir /tmp/cursada2017
+
+e) Copiar todos los archivos de /var/log al directorio antes creado.
+# cp -r /var/log/* /tmp/cursada2017
+
+f) Para el directorio antes creado (y los archivos y subdirectorios contenidos en él) cambiar
+el propietario y grupo al usuario creado y grupo users.
+# chown jg:users cursada2017
+
+g) Agregue permiso total al dueño, de escritura al grupo y escritura y ejecución a todos
+los demás usuarios para todos los archivos dentro de un directorio en forma recursiva.
+# chmod -R 723 cursada2017
+
+h) Acceda a otra terminal virtual para loguearse con el usuario antes creado.
+$ su - jg
+$ chsh -s /bin/bash (para que sea más cómodo moverse)
+
+i) Una vez logueado con el usuario antes creado, averigüe cuál es el nombre de su terminal.
+$ tty
+/dev/pts/1
+
+j) Verifique la cantidad de procesos activos que hay en el sistema.
+$ ps -aux | wc -l
+
+k) Verifiqué la cantidad de usuarios conectados al sistema.
+Cambiando directamente a jg, (switch user desde el botón de apagado):
+$ who
+joaco
+jg
+
+l) Vuelva a la terminal del usuario root, y envíele un mensaje al usuario anteriormente
+creado, avisándole que el sistema va a ser apagado.
+
+
+m) Apague el sistema
+# shutdown now
