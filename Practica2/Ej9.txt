@@ -8,23 +8,30 @@ b) Terminar el proceso llamado init o systemd. ¿Qué resultados obtuvo?
 Ninguno, no es posible terminar con el proceso init/systemd en sistemas actuales.
 
 c) Buscar todos los archivos de usuarios en los que su nombre contiene la cadena “.conf”
+ls -l -R /home | grep "\.conf" 
 
 d) Guardar una lista de procesos en ejecución el archivo /home/<su nombre de usuario>/procesos
+ps -aux | awk '{print $NF}' > /home/$(whoami)/procesos
 
 e) Cambiar los permisos del archivo /home/<su nombre de usuario>/xxxx a:
 Usuario: Lectura, escritura, ejecución
 Grupo: Lectura, ejecución
 Otros: ejecución
+chmod 751 /home/$(whoami)/xxxx
 
 f) Cambiar los permisos del archivo /home/<su nombre de usuario>/yyyy a:
 Usuario: Lectura, escritura.
 Grupo: Lectura, ejecución
 Otros: Ninguno
+chmod 650 /home/$(whoami)/yyyy
 
 g) Borrar todos los archivos del directorio /tmp
+sudo rm /tmp/*
 
 h) Cambiar el propietario del archivo /opt/isodata al usuario iso2010
+sudo chown iso2010 /opt/isodata
 
 i) Guardar en el archivo /home/<su nombre de usuario>/donde el directorio donde
 me encuentro en este momento, en caso de que el archivo exista no se debe eliminar
 su contenido anterior.
+pwd >> /home/$(whoami)/donde
