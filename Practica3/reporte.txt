@@ -1,0 +1,2 @@
+Usuario -------- Cantidad de archivos .txt
+joaquin          1439
