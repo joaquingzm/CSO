@@ -10,7 +10,7 @@ productoria() {
 	echo "$producto"
 }
 
-echo "$(productoria)"
+productoria
 
 exit 0
 

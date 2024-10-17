@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $# -ne 1 ]];then
-	"Pasaje de parámetros incorrecto"
+	"Error: Pasaje de parámetros incorrecto" >&2
 	exit 1
 fi
 

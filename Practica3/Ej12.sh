@@ -27,6 +27,7 @@ modulo() {
 
 
 if [[ $# -ne 3 ]]; then
+	echo "Error: Se esperaban 3 parámetros" >&2
 	exit 1
 fi
 case $3 in
@@ -45,6 +46,7 @@ case $3 in
 		echo "Resultado del modulo: $(modulo $1 $2)"
 		;;
 	*)
+		echo "Error: La operacion $3 no es válida" >&2
 		exit 1
 		;;
 esac

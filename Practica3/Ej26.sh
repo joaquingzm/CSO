@@ -1,6 +1,7 @@
 #!/bin/bash
 
 if [[ $# -lt 1 ]]; then
+	echo "Error: Se esperaba por lo menos un parámetro" >&2
 	exit 1
 fi
 cantidadInexistentes=0

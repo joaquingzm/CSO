@@ -2,7 +2,7 @@
 
 #Chequeo que me pasen la cantidad correcta de parámetros
 if [[ $# -ne 1 ]]; then
-	"Pasaje de parámetros incorrecto."
+	"Error: Pasaje de parámetros incorrecto." >&2
 	exit 1
 fi
 
@@ -13,7 +13,7 @@ users=($(ls /home))
 echo "Usuario -------- Cantidad de archivos .$1" > reporte.txt
 
 for user in "${users[@]}";do
-	cantidad=$(find /home/$user -type f -name "*.$1" 2>/dev/null | wc -l)
+	cantidad=$(find /home/$user -type f -name "*\.$1" 2>/dev/null | wc -l)
 	echo "$user          $cantidad" >> reporte.txt
 done
 

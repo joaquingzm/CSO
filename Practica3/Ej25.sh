@@ -21,7 +21,7 @@ case $1 in
 		echo ""
 		;;
 	*)
-		echo "Error en el 1er parámetro"
+		echo "Error: El 1er parámetro no es válido" >&2
 		;;
 esac
 

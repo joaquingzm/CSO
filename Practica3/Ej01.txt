@@ -1,6 +1,6 @@
 Qué es el Shell Scripting? ¿A qué tipos de tareas están orientados los script?
  ¿Los scripts deben compilarse? ¿Por qué?
 
-El Shell Scripting permite ejecutar agrupar comandos que suelen utilizarse
+El Shell Scripting permite ejecutar grupos de comandos que suelen utilizarse
 para tareas administrativas o repetitivas. No requieren de compilación sino
 que son interpretados por el Shell.
