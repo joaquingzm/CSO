@@ -1,25 +1,27 @@
 #!/bin/bash
 
-array=($(cat /etc/group | grep "users" | cut -d: -f4 | grep ","))
+IFS=',' read -r -a array <<< "$(cat /etc/group | grep "users" | cut -d: -f4)"
 
 case $1 in 
 	"-b")
 		if [[ ! $2 -gt ${#array[@]} ]]; then
-			echo "${array[$2]}"
+			echo "Elemento de la posición $2: ${array[(($2 - 1))]}"
 		else
-			continue
+			echo "2do parámetro supera el tamaño del array"
 		fi
 		;;
 	"-l")
-		echo "${#array[@]}"
+		echo "Longitud del array: ${#array[@]}"
 		;;
 	"-i")
+		echo -n "Elementos: "
 		for e in "${array[@]}";do
-			echo "$e"
+			echo -n "$e "
 		done
+		echo ""
 		;;
 	*)
-		echo "Error en los parametros"
+		echo "Error en el 1er parámetro"
 		;;
 esac
 
