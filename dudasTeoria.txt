@@ -1,0 +1,9 @@
+Duda diagrama de transiciones de procesos: En el pdf de diapositivas
+de procesos N2, en la última diapositiva de todas hay un diagrama que
+explica que cuando un proceso se apropia del CPU pasa por estado de
+preempted y de ahí a User running, entiendo que en realidad siempre
+pasa por kernel running para cargar el proceso. Esa parte del kernel
+entiendo que entra a CPU a tomar decisiones cuando se termina el quantum
+del proceso, no?
+
+
