@@ -1,0 +1,44 @@
+1 Responda de forma sintética sobre los siguientes conceptos:
+
+a) Programa y Proceso
+Programa: Es estáctico, no tiene program counter, existe desde que se edita hasta que
+se borra.
+Proceso: Es dinámico, tiene program counter, existe desde que se lo ejecuta hasta que
+termia.
+
+b) Defina Tiempo de retorno (TR) y Tiempo de espera (TE) para un Job
+TR: Tiempo que transcurre entre que el proceso llega al sistema hasta que completa
+su ejecución (termina).
+TE: Tiempo que el proceso se encuentra en el sistema esperando (sin ejecutarse)
+
+c) Defina Tiempo Promedio de Retorno (TPR) y Tiempo Promedio de Espera (TPE) para un
+lote de Jobs.
+TPR: Cálculo del promedio de tiempos de retorno de un grupo de procesos.
+TPE: Cálculo del promedio de tiempos de espera de un grupo de procesos.
+
+d) ¿Qué es el Quantum?
+El Quantum es una medida que determina por cuántos ciclos/tiempo podrá un proceso/job
+utilizar la CPU.
+
+e) ¿Qué significa que un algoritmo de scheduling sea apropiativo o no apropiativo 
+(Premptive o Non-Preemptive)?
+Non-Preemptive: Una vez que el proceso comienza a ejecutarse en CPU, continua hasta
+que termina o se bloquea por algún evento. Si sucede un I/O y es bloqueante, entonces
+el proceso se quita de CPU y se lleva a la cola de blocked.
+Preemptive: El proceso en ejecución puede ser interrumpido y llevado a la cola de
+listos.
+
+f) ¿Qué tareas realizan? Short Term Scheduler, Long Term Scheduler y Medium Term 
+Scheduler.
+Short Term Scheduler: Determina qué proceso de la cola de listos pasará a utilizar
+el CPU.
+Long Term Scheduler: Admite nuevos programas a memoria (Controla el grado de 
+multiprogramación).
+Medium Term Scheduler: Cuando el SO lo determina, realiza el swap de procesos entre 
+la memoria y el disco (Reduce el grado de multiprogramación).
+
+g) ¿Qué tareas realiza el Dispatcher?
+Se encarga de quitar al proceso del CPU.
+
+
+

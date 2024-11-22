@@ -1,0 +1,15 @@
+2 Procesos
+
+a) Investigu y detalle para que sirve cada uno de los siguientes comandos:
+
+top: Muesta en tiempo real el uso de ecursos del sistema y los procesos en ejecución.
+htop: Versión de top interactiva y mejorada.
+ps: Muestra información estática sobre los procesos en ejecución.
+pstree: Muestra a los procesos en ejecución en una forma de árbol padre-hijo.
+kill: Envía señales a un proceso  basandose en su PID.
+pgrep: Busca procesos por su nombre.
+pkill: Mismo que kill pero utiliza el nombre de proceso en vez del PID.
+killall: Mata todos los procesos que coinciden con un nombre específico.
+renice: Cambia la prioridad de un proceso en ejecución.
+xkill: Cierra una ventana gráfica seleccionandola con el cursor.
+atop: Similar a top pero con enfoque avanzado en el rendimiento y uso de recursos.
